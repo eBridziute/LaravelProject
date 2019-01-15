@@ -27,5 +27,6 @@ Route::resource('admin/users', 'AdminUsersController', ['names'=>[
 
 
         'index'=>'admin.users.index',
-        'create'=>'admin.users.create'
+        'create'=>'admin.users.create',
+        'edit'=>'admin.users.edit'
     ]]);

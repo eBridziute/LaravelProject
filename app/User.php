@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role_id', 'is_active', 'photo_id'
+        'name', 'email', 'password', 'role_id', 'is_active', 'photo_id', '',
     ];
 
     /**
@@ -35,6 +35,11 @@ class User extends Authenticatable
     public function photo(){
 
 
-        return $this->belngsTo('App\Photo');
+        return $this->belongsTo('App\Photo');
     }
+    /*
+    public function setPasswordAttribute($password){
+        if(!empty($password))
+        $this->attributes['password'] =bcrypt($password);
+    }*/
 }
