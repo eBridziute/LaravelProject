@@ -28,11 +28,16 @@ Route::get('/admin', function () {
 Route::group(['middleware'=>'admin'], function(){
 
 	Route::resource('admin/users', 'AdminUsersController', ['names'=>[
-
-
         'index'=>'admin.users.index',
         'create'=>'admin.users.create',
         'edit'=>'admin.users.edit'
+    ]]);
+
+
+    Route::resource('admin/posts', 'AdminPostsController', ['names'=>[
+        'index'=>'admin.posts.index',
+        'create'=>'admin.posts.create',
+        'edit'=>'admin.users.edit',
     ]]);
 });
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
