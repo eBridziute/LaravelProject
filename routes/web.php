@@ -37,7 +37,14 @@ Route::group(['middleware'=>'admin'], function(){
     Route::resource('admin/posts', 'AdminPostsController', ['names'=>[
         'index'=>'admin.posts.index',
         'create'=>'admin.posts.create',
-        'edit'=>'admin.users.edit',
+        'edit'=>'admin.posts.edit',
     ]]);
+
+    Route::resource('admin/categories', 'AdminCategoriesController', ['names'=>[
+        'index'=>'admin.categories.index',
+        'create'=>'admin.categories.create',
+        'edit'=>'admin.categories.edit',
+    ]]);
+
 });
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
