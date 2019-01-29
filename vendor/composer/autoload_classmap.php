@@ -7,8 +7,12 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Category' => $baseDir . '/app/Category.php',
+    'App\\Comment' => $baseDir . '/app/Comment.php',
+    'App\\CommentReply' => $baseDir . '/app/CommentReply.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\AdminCategoriesController' => $baseDir . '/app/Http/Controllers/AdminCategoriesController.php',
+    'App\\Http\\Controllers\\AdminMediaController' => $baseDir . '/app/Http/Controllers/AdminMediaController.php',
     'App\\Http\\Controllers\\AdminPostsController' => $baseDir . '/app/Http/Controllers/AdminPostsController.php',
     'App\\Http\\Controllers\\AdminUsersController' => $baseDir . '/app/Http/Controllers/AdminUsersController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -16,8 +20,10 @@ return array(
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
+    'App\\Http\\Controllers\\CommentRepliesController' => $baseDir . '/app/Http/Controllers/CommentRepliesController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\PostCommentsController' => $baseDir . '/app/Http/Controllers/PostCommentsController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Admin' => $baseDir . '/app/Http/Middleware/Admin.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',

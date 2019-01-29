@@ -50,8 +50,21 @@ Route::group(['middleware'=>'admin'], function(){
     Route::resource('admin/media', 'AdminMediaController', ['names'=>[
         'index'=>'admin.media.index',
         'create'=>'admin.media.create',
+       
+    ]]);
+
+    Route::resource('admin/comments', 'PostCommentsController', ['names'=>[
+        'index'=>'admin.comments.index',
+       // 'create'=>'admin.media.create',
+       // 'edit'=>'admin.categories.edit',
+    ]]);
+
+        Route::resource('admin/comment/replies', 'PostCommentsController', ['names'=>[
+        //'index'=>'admin.media.index',
+       // 'create'=>'admin.media.create',
        // 'edit'=>'admin.categories.edit',
     ]]);
 
 });
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/post/{id}', ['as'=>'home.post', 'uses'=>'AdminPostsController@post']);
