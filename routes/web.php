@@ -55,12 +55,12 @@ Route::group(['middleware'=>'admin'], function(){
 
     Route::resource('admin/comments', 'PostCommentsController', ['names'=>[
         'index'=>'admin.comments.index',
-       // 'create'=>'admin.media.create',
+        'show'=>'admin.comments.show',
        // 'edit'=>'admin.categories.edit',
     ]]);
 
-        Route::resource('admin/comment/replies', 'PostCommentsController', ['names'=>[
-        //'index'=>'admin.media.index',
+        Route::resource('admin/comment/replies', 'CommentRepliesController', ['names'=>[
+        'show'=>'admin.comment.replies.show',
        // 'create'=>'admin.media.create',
        // 'edit'=>'admin.categories.edit',
     ]]);
@@ -68,3 +68,10 @@ Route::group(['middleware'=>'admin'], function(){
 });
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/post/{id}', ['as'=>'home.post', 'uses'=>'AdminPostsController@post']);
+
+
+Route::group(['middleware'=>'auth'], function(){
+    Route::post('comment/reply', 'CommentRepliesController@createReply');
+
+
+});
