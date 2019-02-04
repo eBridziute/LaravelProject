@@ -130,8 +130,8 @@ class AdminPostsController extends Controller
     }
 
 
-    public function post($id){
-        $post = Post::findOrFail($id);
+    public function post($slug){
+        $post = Post::where('slug', $slug)->first();
         $comments = $post->comments()->whereIsActive(1)->get();
          
 

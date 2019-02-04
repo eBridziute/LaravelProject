@@ -29,7 +29,7 @@
 
         <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->title}}</a></td>
         <td>{{str_limit($post->body, 30)}}</td>
-        <td><a href="{{route('home.post', $post->id)}}">See post</a></td>
+        <td><a href="{{route('home.post', $post->slug)}}">See post</a></td>
         <td><a href="{{route('admin.comments.show', $post->id)}}">See coments</a></td>
         <td>{{$post->created_at->diffForHumans()}}</td>
         <td>{{$post->updated_at->diffForHumans()}}</td>
