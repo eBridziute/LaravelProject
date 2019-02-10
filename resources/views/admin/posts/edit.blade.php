@@ -10,7 +10,7 @@
 
         <div class="col-sm-3">
 
-            <img class='img-responsive' height="50" src="{!! URL::asset($post->photo ? $post->photo->file :  '/images/noPhoto.jpg') !!}">
+            <img class='img-responsive' height="50" src="{!! URL::asset($post->photo ? $post->photo->file :  '/images/image_placeholder.png') !!}">
              
             </div>
 

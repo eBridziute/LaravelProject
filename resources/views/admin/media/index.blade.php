@@ -7,16 +7,6 @@
     <form action="{{ route('admin.delete.media') }}"  method="POST" class="form-inline">
        {{ csrf_field() }}
        {{ method_field('delete') }}
-       <div class="form-group">
-         <select name="checkBoxArray" id = "" class="form-control">
-           
-           <option value="">Delete</option>
-         </select>
-       </div>
-       <div class="form-group">
-         <input type="submit" name="delete_all" class="btn-primary">
-
-       </div>
     	<table class="table">
         <thead>
           <tr>
@@ -37,9 +27,9 @@
             <td>{{$photo->created_at ? $photo->created_at : 'no date' }}</td>
             <td>
               <input type="hidden" name="photo" value="{{$photo->id}}">
-                  <div class="form-group">
+                  <!--<div class="form-group">
                     <input type="submit" name="delete_single" value="Delete" class="btn btn-danger">
-                  </div>
+                  </div>-->
 
             </td>
             <th>
@@ -48,6 +38,16 @@
          
         </tbody>
       </table>
+      <!--<div class="form-group">
+         <select name="checkBoxArray" id = "" class="form-control">
+           
+           <option value="">Delete</option>
+         </select>
+       </div>-->
+       <div class="form-group">
+         <input type="submit" name="delete_all" class="btn-primary">
+
+       </div>
     </form>
 @endif
 

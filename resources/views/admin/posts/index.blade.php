@@ -7,11 +7,9 @@
       <tr>
         <th>Id</th>
         <th>Photo</th>
+        <th>Title</th>
         <th>User</th>
         <th>Category</th>
-
-        <th>Title</th>
-        <th>Body</th>
         <th>Post</th>
         <th>Comments</th>
         <th>Created</th>
@@ -23,12 +21,10 @@
     @foreach($posts as $post)
       <tr>
         <td>{{$post->id}}</td>
-        <td><img height="50" src="{!! URL::asset($post->photo ? $post->photo->file :  '/images/noPhoto.jpg') !!}"></td>
+        <td><img height="50" src="{!! URL::asset($post->photo ? $post->photo->file :  '/images/image_placeholder.png') !!}"></td>
+        <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->title}}</a></td>
         <td>{{$post->user->name}}</td>
         <td>{{$post->category ? $post->category->name : "Uncategorized"}}</td>
-
-        <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->title}}</a></td>
-        <td>{{str_limit($post->body, 30)}}</td>
         <td><a href="{{route('home.post', $post->slug)}}">See post</a></td>
         <td><a href="{{route('admin.comments.show', $post->id)}}">See coments</a></td>
         <td>{{$post->created_at->diffForHumans()}}</td>
